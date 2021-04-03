@@ -1,8 +1,9 @@
+<div class="container">
 <h1>Listado de clientes</h1>
-<%= link_to "Crear Cliente", clientes_new_path %>
-<table>
+<%= link_to "Crear Cliente", clientes_new_path, :class => 'btn-succes'%>
+<table class=" table-striped table table-responsive">
   <tr>
-    <thead>
+    <thead  class="thead-dark">
    		<th>CUIT</th>
    		<th>Rubro</th>
       <th>Apellido</th>
@@ -15,7 +16,7 @@
       <th>Observaciones</th>
       <th>Tipo Cliente</th>
       <th>Calificacion</th>
-      	
+
     </thead>
   </tr>
   <% @clientes.each do |cliente| %>
@@ -38,6 +39,7 @@
 	        	<%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: "¿Estás seguro/a?" }  %>
 	      </td>
 	  	</tr>
-	  <% end %>  	
+	  <% end %>
   <% end %>
 </table>
+</div>

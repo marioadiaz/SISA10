@@ -1,49 +1,49 @@
 <%= form_for(@cliente) do |f| %>
-    <div>
+
     	<%= f.label :cuit %>
         <%= f.text_field :cuit %>
-    </div>
-    <div>
+
+
       	<%= f.label :rubro %>
-        <%= f.text_field :rubro %></div>
-    </div>
-    <div>
+        <%= f.text_field :rubro %>
+
+
       	<%= f.label :apellido %>
         <%= f.text_field :apellido %>
-      </div>
-    <div>
+
+
       	<%= f.label :nombre %>
         <%= f.text_field :nombre %>
-    </div>
-    <div>
+
+
       	<%= f.label :barrio %>
         <%= f.text_field :barrio %>
-    </div>
-    <div>
+
+
       	<%= f.label :celular %>
         <%= f.text_field :celular %>
-    </div>
-    <div>
-    	<%= f.label :telefono %>
-     	<%= f.text_field :telefono%>
-    </div>
-    <div>
+
+
+    	   <%= f.label :telefono %>
+     	   <%= f.text_field :telefono%>
+
+
       	<%= f.label :correo %>
         <%= f.text_field :correo %>
-    </div>
-    <div>
+
+
       	<%= f.label :observaciones_cliente %>
         <%= f.text_field :observaciones_cliente %>
-    </div>
-    <div>
+
+
     	<%= f.label :tipo_cliente %>
       	<%= f.text_field :tipo_cliente %>
-  	</div>
-  	<div>
+
+
     	<%= f.label :calificacion %>
       	<%= f.text_field :calificacion %>
-  	</div>
-    <div>
+
+
     	<%= f.button :submit%>
-    </div>
+
 <% end %>

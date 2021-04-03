@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  #CLIENTES 
+
+
+  #CLIENTES
   get '/clientes', to: 'clientes#index'
   get 'clientes/new', to: 'clientes#new'
   post '/clientes', to: 'clientes#create'
@@ -39,5 +41,5 @@ Rails.application.routes.draw do
   patch '/queja/:id', to: 'quejas#update'
   put '/queja/:id', to: 'quejas#update'
   delete '/queja/:id', to: 'quejas#delete'
-  
+
 end
