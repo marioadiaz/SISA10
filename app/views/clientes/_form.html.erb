@@ -1,7 +1,8 @@
 <%= simple_form_for(@cliente) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-inputs cliente-new-form">
+  <div class="center-block form-inputs cliente-new-form">
+
     <div class="row">
       <div class="col-sm">
         <div><%= f.input :apellido %></div>
@@ -25,7 +26,6 @@
       </div>
     </div>
     <!-- div row line 16 -->
-     <%= f.input :tipo_cliente, as: :select, collection: Cliente::TIPO_CLIENTE,  label:'Tipo Cliente'%>
     <div class="row">
       <div class="col-sm">
         <div><%= f.input :telefono %></div>
@@ -33,24 +33,27 @@
       <div class="col-sm">
         <div>  <%= f.input :celular %> </div>
       </div>
-      <div>
-
-      <%= f.label :calificacion %>
-        <%= f.text_field :calificacion %>
-
-        <%= f.label :observaciones_cliente %>
-        <%= f.text_field :observaciones_cliente %>
-
-
+      <div class="col-sm">
+        <%= f.input :tipo_cliente, as: :select, collection: Cliente::TIPO_CLIENTE,  label:'Tipo Cliente'%>
       </div>
+      <div>
     </div>
-    <!-- div row line 28 -->
+      </div>
+    <div class="row">
+      <div class="col-sm">
+        <%= f.input :calificacion %>
+      </div>
+        <div class="col-sm">
+        <%= f.input :observaciones_cliente %>
+      </div>
+    <div class="col-sm">
       <%= f.input :rubro %>
-  </div>
+    </div>
+      </div>
+
   <!-- div form-inputs cliente-new-form -->
    <div class= "d-flex my-3">
      <div> <%= f.button :submit,name="Confirmar",:class => "btn btn-success"  %> </div>
-     <div class="mx-3"> <%= link_to 'Atrás', clientes_path,:class => "btn btn-dark"  %> </div>
   </div>
 <% end %>
 
