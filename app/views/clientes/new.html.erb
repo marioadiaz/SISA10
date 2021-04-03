@@ -1,49 +1,12 @@
-<%= form_for(@cliente) do |f| %>
+<div class="container">
+  <h1>Nuevo Cliente</h1>
 
-    	<%= f.label :cuit %>
-        <%= f.text_field :cuit %>
+  <%= render 'form', cliente: @cliente %>
 
-
-      	<%= f.label :rubro %>
-        <%= f.text_field :rubro %>
-
-
-      	<%= f.label :apellido %>
-        <%= f.text_field :apellido %>
+  <%= link_to 'Back', clientes_path %>
+</div>
 
 
-      	<%= f.label :nombre %>
-        <%= f.text_field :nombre %>
 
 
-      	<%= f.label :barrio %>
-        <%= f.text_field :barrio %>
 
-
-      	<%= f.label :celular %>
-        <%= f.text_field :celular %>
-
-
-    	   <%= f.label :telefono %>
-     	   <%= f.text_field :telefono%>
-
-
-      	<%= f.label :correo %>
-        <%= f.text_field :correo %>
-
-
-      	<%= f.label :observaciones_cliente %>
-        <%= f.text_field :observaciones_cliente %>
-
-
-    	<%= f.label :tipo_cliente %>
-      	<%= f.text_field :tipo_cliente %>
-
-
-    	<%= f.label :calificacion %>
-      	<%= f.text_field :calificacion %>
-
-
-    	<%= f.button :submit%>
-
-<% end %>
