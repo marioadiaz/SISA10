@@ -1,0 +1,72 @@
+Generate Model
+    rails new SISA01 -d postgresql
+
+ALTA DE CLIENTES
+    rails generate model Cliente cuit:string rubro:string apellido:string nombre:string domicilio:string barrio:string celular:string telefono:string correo:string observaciones_cliente:string tipo_cliente: integer estado_mkt:integer baja:boolean
+
+ALTA DE TECNICOS
+    rails generate model Tecnico dni:string apellido:string nombre:string domicilio:string barrio:string celular:string telefono:string correo:string observaciones_tecnico:string baja:boolean
+
+ALTA DE QUEJAS
+    rails generate model Queja orden_fumigacion:references nro_queja:integer fecha_queja:date observaciones_queja:string estado:string baja:boolean
+
+ALTA DE ORDEN_FUMICAGION (CERTIFICADOS)
+
+    rails generate model OrdenFumigacion cliente:references tecnico:references nro_ordfumigacion:integer nro_certificado:integer tipo_certificado:string fecha_aplicacion:date hora_aplicacion:time tratamiento:string vector:string superficie:string veneno:string droga:string observaciones_ordfumigacion:string fecha_vencimiento:date proximo_tratamiento:date importe:integer estado:string baja:boolean
+
+AGREGAR REFERENCIAS -- CLAVES FORANEAS
+
+    rails generate migration add_cliente_id_to_ordenfumigacions cliente: references
+    rails generate migration add_tecnico_id_to_ordenfumigacions tecnico: references
+
+	rails generate migration add_ordenfumigacion_id_to_quejas tecnico: references
+
+AGREGAR REFERENCIAS -- CLAVES FORANEAS
+	
+	rails db:create
+	rails db:migrate
+
+AGREGAR INDEX A CLIENTES
+	rails generate migration agregar_index_a_clientes
+	add_index :clientes, :cuit
+
+AGREGAR INDEX A TECNICOS
+	rails generate migration agregar_index_a_tecnicos
+	add_index :tecnicos, :dni
+
+AGREGAR INDEX A QUEJAS
+	rails generate migration agregar_index_a_quejas
+	add_index :quejas, :nro_queja
+
+AGREGAR INDEX A ORDEN_FUMICACION
+	rails generate migration agregar_index_a_ordenfumigacions
+	add_index :orden_fumigacions, :nro_certificado
+	
+AGREGAR CONTROLADORES
+
+	rails generate controller Clientes index show create edit update destroy
+	
+	rails generate controller Tecnicos index show create edit update destroy
+
+	rails generate controller Quejas index show create edit update destroy
+
+	rails generate controller OrdenFumigacions index show create edit update destroy
+
+#generando el modelo y controlador de Quejas
+	
+	rails db:create
+	rails db:migrate
+
+#busqueda en quejas
+
+	$(function(){
+	var availableTags <% raw @auto %>;
+	$( "#search_nro_cert" ).autocomplete({
+			source: availableTags
+		});
+  	});
+
+$('#user_data').html("<%= j render 'data' %>");
+
+# Dropdown en certificados 
+<%= f.select(:turno, options_for_select([['C','C'],['F','F']])) %>
