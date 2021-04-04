@@ -5859,3 +5859,164 @@ Processing by OrdenFumigacionsController#index as HTML
 Completed 200 OK in 2890ms (Views: 1337.0ms | ActiveRecord: 492.6ms | Allocations: 13928)
 
 
+Started GET "/" for 127.0.0.1 at 2021-04-04 17:09:21 -0300
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mdiaz/.rvm/gems/ruby-3.0.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mdiaz/.rvm/gems/ruby-3.0.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.3ms | Allocations: 414)
+Completed 200 OK in 99ms (Views: 45.6ms | ActiveRecord: 0.0ms | Allocations: 3123)
+
+
+Started GET "/orden_fumigacions" for 127.0.0.1 at 2021-04-04 17:09:30 -0300
+Processing by OrdenFumigacionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orden_fumigacions/index.html.erb within layouts/application
+  [1m[36mOrdenFumigacion Load (5.1ms)[0m  [1m[34mSELECT "orden_fumigacions".* FROM "orden_fumigacions" ORDER BY "orden_fumigacions"."nro_ordfumigacion" ASC[0m
+  ↳ app/views/orden_fumigacions/index.html.erb:26
+  [1m[36mCliente Load (3.6ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (4.3ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCliente Load (2.1ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (1.8ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  Rendered orden_fumigacions/index.html.erb within layouts/application (Duration: 297.1ms | Allocations: 36433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 399.5ms | Allocations: 42820)
+Completed 200 OK in 457ms (Views: 359.4ms | ActiveRecord: 54.0ms | Allocations: 50230)
+
+
+Started GET "/orden_fumigacions" for 127.0.0.1 at 2021-04-04 17:09:32 -0300
+Processing by OrdenFumigacionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orden_fumigacions/index.html.erb within layouts/application
+  [1m[36mOrdenFumigacion Load (2.5ms)[0m  [1m[34mSELECT "orden_fumigacions".* FROM "orden_fumigacions" ORDER BY "orden_fumigacions"."nro_ordfumigacion" ASC[0m
+  ↳ app/views/orden_fumigacions/index.html.erb:26
+  [1m[36mCliente Load (2.7ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (1.9ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCliente Load (2.2ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (2.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  Rendered orden_fumigacions/index.html.erb within layouts/application (Duration: 43.9ms | Allocations: 6920)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.2ms | Allocations: 9950)
+Completed 200 OK in 68ms (Views: 52.3ms | ActiveRecord: 11.4ms | Allocations: 10625)
+
+
+Started GET "/orden_fumigacions/3/edit" for 127.0.0.1 at 2021-04-04 17:09:41 -0300
+Processing by OrdenFumigacionsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrdenFumigacion Load (2.8ms)[0m  [1m[34mSELECT "orden_fumigacions".* FROM "orden_fumigacions" WHERE "orden_fumigacions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orden_fumigacions_controller.rb:38:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering orden_fumigacions/edit.html.erb within layouts/application
+  [1m[36mCliente Load (2.3ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" ORDER BY "clientes"."apellido" ASC[0m
+  ↳ app/views/orden_fumigacions/edit.html.erb:4
+  [1m[36mTecnico Load (1.6ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" ORDER BY "tecnicos"."apellido" ASC[0m
+  ↳ app/views/orden_fumigacions/edit.html.erb:8
+  Rendered orden_fumigacions/edit.html.erb within layouts/application (Duration: 82.1ms | Allocations: 10154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.0ms | Allocations: 13074)
+Completed 200 OK in 113ms (Views: 95.3ms | ActiveRecord: 6.6ms | Allocations: 15138)
+
+
+Started GET "/orden_fumigacions/3/edit" for 127.0.0.1 at 2021-04-04 17:09:48 -0300
+Processing by OrdenFumigacionsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrdenFumigacion Load (1.8ms)[0m  [1m[34mSELECT "orden_fumigacions".* FROM "orden_fumigacions" WHERE "orden_fumigacions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orden_fumigacions_controller.rb:38:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering orden_fumigacions/edit.html.erb within layouts/application
+  [1m[36mCliente Load (2.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" ORDER BY "clientes"."apellido" ASC[0m
+  ↳ app/views/orden_fumigacions/edit.html.erb:4
+  [1m[36mTecnico Load (1.8ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" ORDER BY "tecnicos"."apellido" ASC[0m
+  ↳ app/views/orden_fumigacions/edit.html.erb:8
+  Rendered orden_fumigacions/edit.html.erb within layouts/application (Duration: 22.3ms | Allocations: 5224)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 8242)
+Completed 200 OK in 52ms (Views: 35.7ms | ActiveRecord: 5.5ms | Allocations: 9435)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-04 18:48:32 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mdiaz/.rvm/gems/ruby-3.0.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mdiaz/.rvm/gems/ruby-3.0.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.8ms | Allocations: 218)
+Completed 200 OK in 29ms (Views: 18.4ms | Allocations: 979)
+
+
+Started GET "/orden_fumigacions" for 127.0.0.1 at 2021-04-04 18:48:38 -0300
+Processing by OrdenFumigacionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orden_fumigacions/index.html.erb within layouts/application
+  [1m[36mOrdenFumigacion Load (12.0ms)[0m  [1m[34mSELECT "orden_fumigacions".* FROM "orden_fumigacions" ORDER BY "orden_fumigacions"."nro_ordfumigacion" ASC[0m
+  ↳ app/views/orden_fumigacions/index.html.erb:26
+  [1m[36mCliente Load (3.5ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (1.8ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCliente Load (1.6ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (1.6ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  Rendered orden_fumigacions/index.html.erb within layouts/application (Duration: 166.0ms | Allocations: 7291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 419.3ms | Allocations: 10318)
+Completed 200 OK in 917ms (Views: 403.6ms | ActiveRecord: 420.7ms | Allocations: 13828)
+
+
+Started GET "/orden_fumigacions" for 127.0.0.1 at 2021-04-04 18:48:39 -0300
+Processing by OrdenFumigacionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orden_fumigacions/index.html.erb within layouts/application
+  [1m[36mOrdenFumigacion Load (2.2ms)[0m  [1m[34mSELECT "orden_fumigacions".* FROM "orden_fumigacions" ORDER BY "orden_fumigacions"."nro_ordfumigacion" ASC[0m
+  ↳ app/views/orden_fumigacions/index.html.erb:26
+  [1m[36mCliente Load (2.4ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (2.1ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.1ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCliente Load (1.6ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mCACHE Tecnico Load (0.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  [1m[36mCACHE Cliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:29
+  [1m[36mTecnico Load (2.0ms)[0m  [1m[34mSELECT "tecnicos".* FROM "tecnicos" WHERE "tecnicos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orden_fumigacions/index.html.erb:30
+  Rendered orden_fumigacions/index.html.erb within layouts/application (Duration: 133.6ms | Allocations: 6909)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 251.8ms | Allocations: 9936)
+Completed 200 OK in 269ms (Views: 255.8ms | ActiveRecord: 10.4ms | Allocations: 10566)
+
+
