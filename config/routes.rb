@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
 
-root 'clientes#index'
+root 'pages#home'
+
+
  devise_for :users
+ get '/pages/home', to: 'pages#home'
 
   #CLIENTES
   get '/clientes', to: 'clientes#index'
