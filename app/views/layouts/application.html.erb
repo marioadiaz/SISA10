@@ -32,7 +32,6 @@
 </head>
 
 <body id="page-top">
-<%= render 'shared/navbar' %>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -63,7 +62,7 @@
             </li>
 
                    <li class="nav-item active">
-                <a class="nav-link"href="/">
+                <a class="nav-link"href="/tecnicos">
                     <i class="fas fa-calendar-alt"></i>
                     <span >Prox. Fumigaciones</span></a>
             </li>
@@ -74,13 +73,20 @@
                     <span >Técnicos</span></a>
             </li>
 
-                             <li class="nav-item active">
+              <li class="nav-item active">
                 <a class="nav-link"href="/quejas">
-                    <i class="fas fa-id-badge"></i>
+              <i class="fas fa-id-badge"></i>
                     <span >Reclamos</span></a>
             </li>
 
+              <li class="nav-item active">
+              <i class=""></i>
+
+<%= link_to "Salir", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-light" %>
+                    </a>
             </li>
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
