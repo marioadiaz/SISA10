@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+ before_action :authenticate_user!
 
   def home
+    @orden_fumigacions = OrdenFumigacion.all.order(:nro_ordfumigacion)
   end
 end
