@@ -59,6 +59,20 @@ class ClientesController < ApplicationController
     end
   end
 
+  #DEFINO EL BUSCADOR PARA EL MODAL EN ORDEN_FUMIGACION
+  def buscador
+    @resultados = Cliente.buscador(params[:termino]).map do |cliente|
+      {
+          id: cliente.id,
+          apellido_cliente: cliente.apellido
+      }
+    end
+
+    respond_to do |format|
+      format.json { render :json => @resultados }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente

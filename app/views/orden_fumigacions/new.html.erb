@@ -2,10 +2,20 @@
     <div>
     	<%= f.label :cliente_id %>
     	<%= collection_select(:orden_fumigacion, :cliente_id, Cliente.all.order(:apellido), :id, :apellido, {prompt: 'Seleccione el Cliente'} ) %>
+      
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#buscador_cliente">
+        Buscar cliente
+      </button>
+
     </div>
     <div>
     	<%= f.label :tecnico_id %>
     	<%= collection_select(:orden_fumigacion, :tecnico_id, Tecnico.all.order(:apellido), :id, :apellido, {prompt: 'Seleccione el Tecnico'} ) %>
+      
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#buscador_tecnico">
+        Buscar tecnico
+      </button>
+
     </div>
     <div>
       	<%= f.label :nro_ordfumigacion %>
@@ -71,4 +81,7 @@
     <div>
     	<%= f.button :submit%>
     </div>
+  </div>
 <% end %>
+
+<%= render 'buscador_cliente' , orden_fumigacion: @orden_fumigacion %>

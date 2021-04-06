@@ -38,6 +38,9 @@ root 'pages#home'
   put '/orden_fumigacion/:id', to: 'orden_fumigacions#update'
   delete '/orden_fumigacion/:id', to: 'orden_fumigacions#delete'
 
+  get 'buscador_clientes/:termino', to: 'clientes#buscador'
+  get 'buscador_tecnicos/:termino', to: 'tecnicos#buscador'
+
   #QUEJAS
   get '/quejas', to: 'quejas#index'
   get 'quejas/new', to: 'quejas#new'

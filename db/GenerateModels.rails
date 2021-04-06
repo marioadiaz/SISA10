@@ -70,3 +70,11 @@ $('#user_data').html("<%= j render 'data' %>");
 
 # Dropdown en certificados 
 <%= f.select(:turno, options_for_select([['C','C'],['F','F']])) %>
+
+<%= form_tag "pages/search", :method => 'get' do %>
+        <div>
+        <%= text_field_tag :keyword, nil, placeholder: "Ingresar datos de cliente" %>
+        <%= content_tag :button, type: :submit do %> Buscar
+        <% end %>
+        </div>
+      <% end %>

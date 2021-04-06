@@ -31,7 +31,7 @@
 
       <tbody>
         <% @orden_fumigacions.each do |orden_fumigacion| %>
-          <%if orden_fumigacions.estado == true &&  orden_fumigacion.fecha_vencimiento == Date.today%>
+          <%if orden_fumigacion.estado == true &&  orden_fumigacion.fecha_vencimiento == Date.today%>
             <tr>
               <td><%= orden_fumigacion.nro_certificado %></td>
               <td><%= orden_fumigacion.cliente.nombre %></td>

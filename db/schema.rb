@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2021_04_03_193748) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cliente_id"], name: "index_orden_fumigacions_on_cliente_id"
-    t.index ["nro_certificado"], name: "index_orden_fumigacions_on_nro_certificado"
     t.index ["tecnico_id"], name: "index_orden_fumigacions_on_tecnico_id"
   end
 
@@ -69,7 +68,6 @@ ActiveRecord::Schema.define(version: 2021_04_03_193748) do
     t.boolean "baja"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["nro_queja"], name: "index_quejas_on_nro_queja"
     t.index ["orden_fumigacion_id"], name: "index_quejas_on_orden_fumigacion_id"
   end
 

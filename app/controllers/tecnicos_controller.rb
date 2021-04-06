@@ -56,6 +56,21 @@ class TecnicosController < ApplicationController
     end
   end
 
+  #DEFINO EL BUSCADOR PARA EL MODAL EN ORDEN_FUMIGACION
+  def buscador
+    @resultados = Tecnico.buscador(params[:termino]).map do |tecnico|
+      {
+          id: tecnico.id,
+          cuit_tecnico: tecnico.cuit,
+          apellido_tecnico: tecnico.apellido
+      }
+    end
+
+    respond_to do |format|
+      format.json { render :json => @resultados }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente
