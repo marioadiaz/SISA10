@@ -1,5 +1,5 @@
 class TecnicosController < ApplicationController
-
+  before_action :set_tecnico, only: [:show, :edit, :update, :destroy]
   def index
       @tecnicos = Tecnico.all.order(:apellido)
       respond_to do |format|
@@ -25,7 +25,7 @@ class TecnicosController < ApplicationController
 
     respond_to do |format|
       if @tecnico.save
-        format.html { redirect_to tecnicos_path, notice: 'El tecnico fue exitosamente creado.' }
+        format.html { redirect_to tecnicos_path}
         format.json { render :show, status: :created, location: @tecnico }
       else
         format.html { render :new }
@@ -51,14 +51,14 @@ class TecnicosController < ApplicationController
     @tecnico = Tecnico.find(params[:id])
     @tecnico.update baja: false
     respond_to do |format|
-      format.html { redirect_to tecnicos_url, notice: 'El tecnico fue eliminado.' }
+      format.html { redirect_to tecnicos_url}
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_cliente
+    def set_tecnico
       @tecnico = Tecnico.find(params[:id])
     end
 
