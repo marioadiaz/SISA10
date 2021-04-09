@@ -1,5 +1,5 @@
 class ClientesController < ApplicationController
-  before_action :set_cliente, only: [:show, :copy, :edit, :update, :destroy]
+  before_action :set_cliente, only: [:show, :edit, :update, :destroy]
 
   def index
       @clientes = Cliente.all.order(:apellido)
