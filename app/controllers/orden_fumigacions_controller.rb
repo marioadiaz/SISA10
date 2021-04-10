@@ -1,4 +1,6 @@
 class OrdenFumigacionsController < ApplicationController
+  before_action only: [:new, :show, :edit, :delete, :add_cliente]
+  
   def index
     @orden_fumigacions = OrdenFumigacion.all.order(:nro_ordfumigacion)
       respond_to do |format|
@@ -54,6 +56,27 @@ class OrdenFumigacionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to orden_fumigacions_url, notice: 'La orden_fumigacion fue eliminada.' }
       format.json { head :no_content }
+    end
+  end
+
+  def add_cliente 
+    @cliente = Cliente.find(params[:cliente_id])
+    
+    if @cliente.present?
+      
+        result = { apellido: @cliente.try(:apellido) }
+        puts "result: "
+        puts result
+        respond_to do |format|
+        if @cliente.valid?
+            format.json { render json: result }
+          else
+            format.json { render json: @cliente.errors.full_messages, status: :unprocessable_entity }
+          end
+        end
+      
+    else
+      render json: { message: "El cliente no se encontró" }, status: :not_found
     end
   end
 

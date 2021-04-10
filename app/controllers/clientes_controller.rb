@@ -61,10 +61,11 @@ class ClientesController < ApplicationController
 
   #DEFINO EL BUSCADOR PARA EL MODAL EN ORDEN_FUMIGACION
   def buscador
+
     @resultados = Cliente.buscador(params[:termino]).map do |cliente|
       {
           id: cliente.id,
-          apellido_cliente: cliente.apellido
+          apellido: cliente.apellido
       }
     end
 

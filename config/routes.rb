@@ -39,6 +39,7 @@ root 'pages#home'
   delete '/orden_fumigacion/:id', to: 'orden_fumigacions#delete'
 
   get 'buscador_clientes/:termino', to: 'clientes#buscador'
+  post '/add_cliente_orden_fumigacion/', to: 'orden_fumigacions#add_cliente'
   get 'buscador_tecnicos/:termino', to: 'tecnicos#buscador'
 
   #QUEJAS

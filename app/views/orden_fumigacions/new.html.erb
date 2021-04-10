@@ -1,87 +1,91 @@
 <%= form_for(@orden_fumigacion) do |f| %>
     <div>
-    	<%= f.label :cliente_id %>
-    	<%= collection_select(:orden_fumigacion, :cliente_id, Cliente.all.order(:apellido), :id, :apellido, {prompt: 'Seleccione el Cliente'} ) %>
-      
+      <%= f.label :cliente_id %>
+
       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#buscador_cliente">
         Buscar cliente
       </button>
 
-    </div>
-    <div>
-    	<%= f.label :tecnico_id %>
-    	<%= collection_select(:orden_fumigacion, :tecnico_id, Tecnico.all.order(:apellido), :id, :apellido, {prompt: 'Seleccione el Tecnico'} ) %>
-      
-      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#buscador_tecnico">
-        Buscar tecnico
-      </button>
+      <div id="cliente_ap_orden_fumigacion" class="apellido-cliente col-md-3" > 
+        <%= "Cliente: #{@cliente.present? ? @cliente.apellido : "Cliente general"}" %>
+      </div>
+      <div id="cliente_id_orden_fumigacion" class="apellido-cliente col-md-3" > 
+        <%= "Cliente_id: #{@cliente.present? ? @cliente.cliente_id : "Cliente id"}" %>
+        
+        <%= f.text_field :cliente_id => "#{@cliente.present? ? @cliente.cliente_id : "Cliente id"}" %>
+
+      </div>  
 
     </div>
     <div>
-      	<%= f.label :nro_ordfumigacion %>
+      <%= f.label :tecnico_id %>
+      <%= f.text_field :tecnico_id %>
+    </div>  
+    <div>
+        <%= f.label :nro_ordfumigacion %>
         <%= f.text_field :nro_ordfumigacion %>
       </div>
     <div>
-      	<%= f.label :nro_certificado %>
+        <%= f.label :nro_certificado %>
         <%= f.text_field :nro_certificado %>
     </div>
     <div>
-      	<%= f.label :tipo_certificado %>
+        <%= f.label :tipo_certificado %>
         <%= f.text_field :tipo_certificado %>
     </div>
     <div>
-      	<%= f.label :fecha_aplicacion %>
+        <%= f.label :fecha_aplicacion %>
         <%= f.text_field :fecha_aplicacion %>
     </div>
     <div>
-    	<%= f.label :hora_aplicacion %>
-     	<%= f.text_field :hora_aplicacion%>
+      <%= f.label :hora_aplicacion %>
+      <%= f.text_field :hora_aplicacion%>
     </div>
     <div>
-      	<%= f.label :tratamiento %>
+        <%= f.label :tratamiento %>
         <%= f.text_field :tratamiento %>
     </div>
     <div>
-      	<%= f.label :vector %>
+        <%= f.label :vector %>
         <%= f.text_field :vector %>
     </div>
     <div>
-    	<%= f.label :superficie %>
-      	<%= f.text_field :superficie %>
-  	</div>
-  	<div>
-    	<%= f.label :veneno %>
-      	<%= f.text_field :veneno %>
-  	</div>
-	<div>
-    	<%= f.label :droga %>
-      	<%= f.text_field :droga %>
-  	</div>
-	<div>
-    	<%= f.label :observaciones_ordfumigacion %>
-      	<%= f.text_field :observaciones_ordfumigacion %>
-  	</div>
-	<div>
-    	<%= f.label :fecha_vencimiento %>
-      	<%= f.text_field :fecha_vencimiento %>
-  	</div>
-	<div>
-    	<%= f.label :proximo_tratamiento %>
-      	<%= f.text_field :proximo_tratamiento %>
-  	</div>
-	<div>
-    	<%= f.label :importe %>
-      	<%= f.text_field :importe %>
-  	</div>
-	<div>
-    	<%= f.label :estado %>
-      	<%= f.text_field :estado %>
-  	</div>  	
+      <%= f.label :superficie %>
+        <%= f.text_field :superficie %>
+    </div>
+    <div>
+      <%= f.label :veneno %>
+        <%= f.text_field :veneno %>
+    </div>
+  <div>
+      <%= f.label :droga %>
+        <%= f.text_field :droga %>
+    </div>
+  <div>
+      <%= f.label :observaciones_ordfumigacion %>
+        <%= f.text_field :observaciones_ordfumigacion %>
+    </div>
+  <div>
+      <%= f.label :fecha_vencimiento %>
+        <%= f.text_field :fecha_vencimiento %>
+    </div>
+  <div>
+      <%= f.label :proximo_tratamiento %>
+        <%= f.text_field :proximo_tratamiento %>
+    </div>
+  <div>
+      <%= f.label :importe %>
+        <%= f.text_field :importe %>
+    </div>
+  <div>
+      <%= f.label :estado %>
+        <%= f.text_field :estado %>
+    </div>    
 
     <div>
-    	<%= f.button :submit%>
+      <%= f.button :submit%>
     </div>
   </div>
 <% end %>
 
-<%= render 'buscador_cliente' , orden_fumigacion: @orden_fumigacion %>
+<%= render 'buscador_cliente' %>
