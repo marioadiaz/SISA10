@@ -24,10 +24,11 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'font_awesome5_rails'
+gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'bootstrap'
 
+gem 'mini_racer'
 gem 'simple_form'
 gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
